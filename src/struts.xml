@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
+	<package name="login" namespace="/" extends="struts-default">
+		<action name="login_action" class="loginAction" method="login">
+			<result name="adm" >index.jsp</result>
+			<result name="usr" >index.jsp</result>
+			<result name="err" >jump.jsp</result>
+		</action>
+		<action name="sign_out" class="loginAction" method="signout">
+			<result name="signout" type="redirect">login.jsp</result>
+		</action>
+	</package>
 
 </struts>    

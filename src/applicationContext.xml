@@ -42,4 +42,25 @@
 				<value>com/domain/Fileinfo.hbm.xml</value>
 				<value>com/domain/Docinfo.hbm.xml</value>
 				<value>com/domain/Noticeinfo.hbm.xml</value></list>
-		</property></bean></beans>
+		</property></bean>
+		
+		
+	<!-- DAO相关 -->
+	<bean scope="prototype" id="baseDao" class="com.dao.BaseDaoHibImpl"
+		autowire="byName">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- Service相关 -->
+	<bean scope="prototype" id="userinfoService"
+		class="com.services.UserinfoServiceImpl" autowire="byName">
+	</bean>
+	
+	<!-- Action相关 -->
+	<bean scope="prototype" autowire="byName" id="loginAction"
+		class="com.controller.LoginAction">
+	</bean>
+	<bean scope="prototype" id="userAction" autowire="byName" 
+		class="com.controller.UserAction">
+	</bean>
+</beans>

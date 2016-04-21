@@ -1,0 +1,6 @@
+/.settings/
+/WebRoot/WEB-INF/classes/
+/.class*
+/.my*
+/.project
+/.spring*
